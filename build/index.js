@@ -82,15 +82,21 @@ module.exports =
 /******/
 /******/
 /******/ 	// Load entry module and return exports
-/******/ 	return __webpack_require__(__webpack_require__.s = 4);
+/******/ 	return __webpack_require__(__webpack_require__.s = 5);
 /******/ })
 /************************************************************************/
 /******/ ([
 /* 0 */
+/***/ (function(module, exports) {
+
+module.exports = require("react");
+
+/***/ }),
+/* 1 */
 /***/ (function(module, exports, __webpack_require__) {
 
-var api = __webpack_require__(1);
-            var content = __webpack_require__(2);
+var api = __webpack_require__(2);
+            var content = __webpack_require__(3);
 
             content = content.__esModule ? content.default : content;
 
@@ -110,7 +116,7 @@ var update = api(content, options);
 module.exports = content.locals || {};
 
 /***/ }),
-/* 1 */
+/* 2 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -385,20 +391,20 @@ module.exports = function (list, options) {
 };
 
 /***/ }),
-/* 2 */
+/* 3 */
 /***/ (function(module, exports, __webpack_require__) {
 
 // Imports
-var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(3);
+var ___CSS_LOADER_API_IMPORT___ = __webpack_require__(4);
 exports = ___CSS_LOADER_API_IMPORT___(false);
 // Module
-exports.push([module.i, ".modalContainer {\r\n    display: none;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    align-content: center;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color:rgba(0, 0, 0, 0.8);\r\n    z-index: 10;\r\n    overflow: auto;\r\n    animation: lightboxIn 0.5s;\r\n}\r\n\r\n.closeTagButton {\r\n    position: relative;\r\n    left: 350px;\r\n    bottom: 20px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-content: center;\r\n    flex-wrap: wrap;\r\n    background-color: black;\r\n    border-radius: 50px;\r\n    width: 30px;\r\n    height: 30px;\r\n}\r\n\r\n.modal {\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n    display: flex;\r\n    background-color: white;\r\n    width: 500px;\r\n    height: 45px;\r\n    margin-top: 50px;\r\n    animation: modalopen;\r\n    animation-duration: 0.6s;\r\n    border-radius: 5px;\r\n    padding-left: 20px;\r\n}\r\n\r\n\r\n@keyframes modalopen {\r\n    from {\r\n        opacity: 0;\r\n        transform: translateY(-150px);\r\n    }\r\n\r\n    to {\r\n        opacity: 1;\r\n    }\r\n}", ""]);
+exports.push([module.i, ".modalContainer {\r\n    display: flex;\r\n    flex-wrap: wrap;\r\n    justify-content: center;\r\n    align-content: center;\r\n    position: fixed;\r\n    top: 0;\r\n    left: 0;\r\n    right: 0;\r\n    bottom: 0;\r\n    width: 100%;\r\n    height: 100%;\r\n    background-color:rgba(0, 0, 0, 0.8);\r\n    z-index: 10;\r\n    overflow: auto;\r\n    animation: lightboxIn 0.5s;\r\n}\r\n\r\n.closeTagButton {\r\n    position: relative;\r\n    left: 350px;\r\n    bottom: 20px;\r\n    display: flex;\r\n    justify-content: center;\r\n    align-content: center;\r\n    flex-wrap: wrap;\r\n    background-color: black;\r\n    border-radius: 50px;\r\n    width: 30px;\r\n    height: 30px;\r\n}\r\n\r\n.modal {\r\n    flex-wrap: wrap;\r\n    align-content: center;\r\n    display: flex;\r\n    background-color: white;\r\n    width: 500px;\r\n    height: 45px;\r\n    margin-top: 50px;\r\n    animation: modalopen;\r\n    animation-duration: 0.6s;\r\n    border-radius: 5px;\r\n    padding-left: 20px;\r\n}\r\n\r\n\r\n@keyframes modalopen {\r\n    from {\r\n        opacity: 0;\r\n        transform: translateY(-150px);\r\n    }\r\n\r\n    to {\r\n        opacity: 1;\r\n    }\r\n}", ""]);
 // Exports
 module.exports = exports;
 
 
 /***/ }),
-/* 3 */
+/* 4 */
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
@@ -498,7 +504,7 @@ function toComment(sourceMap) {
 }
 
 /***/ }),
-/* 4 */
+/* 5 */
 /***/ (function(module, __webpack_exports__, __webpack_require__) {
 
 "use strict";
@@ -508,33 +514,45 @@ __webpack_require__.r(__webpack_exports__);
 // EXPORTS
 __webpack_require__.d(__webpack_exports__, "Modal", function() { return /* reexport */ Modal_Modal; });
 
+// EXTERNAL MODULE: external "react"
+var external_react_ = __webpack_require__(0);
+var external_react_default = /*#__PURE__*/__webpack_require__.n(external_react_);
+
 // EXTERNAL MODULE: ./src/Modal.css
-var Modal = __webpack_require__(0);
+var Modal = __webpack_require__(1);
 
 // CONCATENATED MODULE: ./src/Modal.js
 
+
+/**
+ * <show a modal>
+ * @display   {<boolean>} props <show or hide the modal>
+ * @title   {<string>} props <a text to personnalized the modal>
+ * @onClose   {<function>} props <function for close the modal when click on svg "image cross">
+ */
 function Modal_Modal(_ref) {
   var display = _ref.display,
     _ref$title = _ref.title,
     title = _ref$title === void 0 ? '' : _ref$title,
     onClose = _ref.onClose;
+  console.log(display);
   if (display === false) {
     return null;
   }
-  return /*#__PURE__*/React.createElement("div", {
+  return /*#__PURE__*/external_react_default.a.createElement("div", {
     className: "modalContainer"
-  }, /*#__PURE__*/React.createElement("div", {
+  }, /*#__PURE__*/external_react_default.a.createElement("div", {
     className: "modal"
-  }, title, /*#__PURE__*/React.createElement("div", {
+  }, title, /*#__PURE__*/external_react_default.a.createElement("div", {
     className: "closeTagButton"
-  }, /*#__PURE__*/React.createElement("svg", {
+  }, /*#__PURE__*/external_react_default.a.createElement("svg", {
     width: "16",
     height: "16",
     viewBox: "0 0 42 42",
     fill: "black",
     xmlns: "http://www.w3.org/2000/svg",
     onClick: onClose
-  }, /*#__PURE__*/React.createElement("path", {
+  }, /*#__PURE__*/external_react_default.a.createElement("path", {
     d: "M42 4.23L37.77 0L21 16.77L4.23 0L0 4.23L16.77 21L0 37.77L4.23 42L21 25.23L37.77 42L42 37.77L25.23 21L42 4.23Z",
     fill: "white"
   })))));

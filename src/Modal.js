@@ -1,6 +1,13 @@
+import React from 'react';
 import './Modal.css';
-
+/**
+ * <show a modal>
+ * @display   {<boolean>} props <show or hide the modal>
+ * @title   {<string>} props <a text to personnalized the modal>
+ * @onClose   {<function>} props <function for close the modal when click on svg "image cross">
+ */
 export default function Modal({ display, title = '', onClose }) {
+  console.log(display)
   if (display === false) {
     return null;
   }
